@@ -7,10 +7,6 @@
 * **纯前门并发监听 (Pure Front-door Monitor)**：抛弃后门探针，采用 5 协程并发死循环，完美解耦 AXI 5 大独立通道，支持高度乱序和时差到达的 Transaction 抓取与组装。
 * **极端场景注入 (Chaos & Error Injection)**：
   * **非对齐地址轰炸**：支持跨边界、非对齐的狂野地址寻址测试。
- 59220.00ns INFO     ..p/vip/axi_lite_scoreboard.py(25) [uvm_test_top.env.scb]: ✅ [SCB] 比对成功! 地址 0x4: 期望=0x21467dbc, 实际=0x21467dbc
- 59270.00ns INFO     .._vip/vip/axi_lite_monitor.py(28) [uvm_test_top.env.agent.mon]: [MON-AW] 抓取写地址：0xa
- 59320.00ns INFO     ..p/vip/axi_lite_scoreboard.py(21) [uvm_test_top.env.scb]: 💾 [SCB] 记录写入 -> 寄存器 0xa(映射到物理地址 0x8) 更新为 0x943c3c0e
- 59370.00ns INFO     .._vip/vip/axi_lite_monitor.py(28) [uvm_test_top.env.agent.mon]: [MON-AW] 抓取写地址：0xc
   * **反压测试 (Backpressure)**：Master 接收端支持随机 `READY` 信号撤销与延迟，模拟真实的 SoC 拥堵环境。
   * **乱序并发发送**：AW 与 W 通道支持随机时差（Delay）注入，打破信号完美同步，暴露状态机死角。
 * **覆盖率闭环 (Coverage Closure)**：
