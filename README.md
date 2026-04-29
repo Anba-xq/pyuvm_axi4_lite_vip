@@ -19,7 +19,7 @@
 ### 依赖环境
 * Python 3.8+
 * Cocotb & PyUVM (`pip install cocotb pyuvm`)
-* 仿真器：VCS / Xcelium / Icarus Verilog (默认配置为 VCS)
+* 仿真器：VCS / Questasim / Icarus Verilog (默认配置为 VCS)
 
 ### 运行测试与收集覆盖率
 ```bash
